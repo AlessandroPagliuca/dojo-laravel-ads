@@ -1,6 +1,7 @@
 <?php
 
-use App\Http\Controllers\AnnouncementController;
+use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\AnnouncementController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
