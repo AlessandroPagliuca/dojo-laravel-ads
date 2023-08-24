@@ -1,5 +1,7 @@
 <?php
-
+/*
+Created example announcement for test
+ */
 return [
     'announcements' => [
         'title' => 'per month',
