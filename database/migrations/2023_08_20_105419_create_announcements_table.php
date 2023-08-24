@@ -16,6 +16,7 @@ return new class extends Migration {
             $table->id();
             $table->string('title', 100);
             $table->string('slug', 255);
+            $table->string('duration', 100);
             $table->decimal('price', 10, 2);
             $table->string('plan', 100);
             $table->string('description', 100);

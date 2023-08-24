@@ -22,6 +22,7 @@ class AnnouncementSeeder extends Seeder
         $newAnnouncement = new Announcement();
         $newAnnouncement->title = $announcement['title'];
         $newAnnouncement->slug = Str::slug($announcement['title'], '-');
+        $newAnnouncement->duration = $announcement['duration'];
         $newAnnouncement->price = $announcement['price'];
         $newAnnouncement->plan = $announcement['plan'];
         $newAnnouncement->description = $announcement['description'];
