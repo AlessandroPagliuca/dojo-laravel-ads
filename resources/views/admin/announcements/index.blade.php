@@ -26,7 +26,8 @@
                         <td>{{ $announcement->plan }}</td>
                         <td>{{ $announcement->description }}</td>
                         <td>{{ $announcement->contract }}</td>
-                        <td> <a href="{{ route('admin.announcements.show', $announcement->slug) }}" class="bg-light">
+                        <td> <a href="{{ route('admin.announcements.show', $announcement->slug) }}"
+                                class="bg-light text-uppercase">
                                 show
                             </a>
                         </td>
