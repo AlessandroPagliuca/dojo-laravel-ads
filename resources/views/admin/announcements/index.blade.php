@@ -12,6 +12,7 @@
                     <th scope="col">Plan</th>
                     <th scope="col">Description</th>
                     <th scope="col">Contract</th>
+                    <th scope="col"></th>
                 </tr>
             </thead>
             <tbody>
@@ -25,6 +26,10 @@
                         <td>{{ $announcement->plan }}</td>
                         <td>{{ $announcement->description }}</td>
                         <td>{{ $announcement->contract }}</td>
+                        <td> <a href="{{ route('admin.announcements.show', $announcement->slug) }}" class="bg-light">
+                                show
+                            </a>
+                        </td>
                     </tr>
                 @endforeach
             </tbody>
