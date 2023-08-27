@@ -12,7 +12,7 @@
                     <th scope="col">Plan</th>
                     <th scope="col">Description</th>
                     <th scope="col">Contract</th>
-                    <th scope="col">More</th>
+                    <th scope="col"></th>
                 </tr>
             </thead>
             <tbody>
