@@ -27,7 +27,7 @@ class AnnouncementSeeder extends Seeder
         $newAnnouncement->plan = $announcement['plan'];
         $newAnnouncement->description = $announcement['description'];
         $newAnnouncement->contract = $announcement['contract'];
-
+        $newAnnouncement->status = $announcement['status'];
         $newAnnouncement->save();
 
     }

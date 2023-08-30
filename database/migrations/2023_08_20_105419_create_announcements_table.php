@@ -21,6 +21,7 @@ return new class extends Migration {
             $table->string('plan', 100);
             $table->string('description', 100);
             $table->string('contract', 100);
+            $table->string('status', 100);
             $table->timestamps();
         });
     }
