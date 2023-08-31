@@ -23,4 +23,8 @@ class Announcement extends Model
     {
         return $this->hasMany(Session::class);
     }
+    public function cookies()
+    {
+        return $this->hasMany(View::class);
+    }
 }

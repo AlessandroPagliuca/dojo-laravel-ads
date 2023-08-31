@@ -4,9 +4,11 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Announcement;
+// use Illuminate\Support\Facades\Request;
 use Illuminate\Support\Str;
 use App\Http\Requests\StoreAnnouncementRequest;
 use App\Http\Requests\UpdateAnnouncementRequest;
+use Illuminate\Support\Facades\Cookie;
 
 class AnnouncementController extends Controller
 {
@@ -16,7 +18,7 @@ class AnnouncementController extends Controller
      */
     public function index()
     {
-        $announcements = Announcement::all();
+        $announcements = Announcement::first();
         return view('admin.announcements.index', compact('announcements'));
     }
 
@@ -78,5 +80,13 @@ class AnnouncementController extends Controller
     public function destroy(Announcement $announcement)
     {
         //
+    }
+    public function cookie($slug)
+    {
+        //Retrieve the annoucement from the database using the slug
+        $annoucement = Announcement::where('slug', $slug)->firstOrFail();
+        //Retrieve the annoucement view using cookie
+        $guestCookie = Cookie::get('value');
+        return view('admin.announcements.cookie', compact('annoucement', 'guestCookie'));
     }
 }
