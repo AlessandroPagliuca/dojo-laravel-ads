@@ -31,11 +31,6 @@
                                 show
                             </a>
                         </td>
-                        <td> <a href="{{ route('admin.announcements.cookie', $announcement->slug) }}"
-                                class="bg-light text-uppercase">
-                                cookie
-                            </a>
-                        </td>
                     </tr>
                 @endforeach
             </tbody>
