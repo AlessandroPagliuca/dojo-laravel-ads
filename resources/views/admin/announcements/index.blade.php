@@ -19,7 +19,7 @@
                 <!--loop for print annoucement in page-->
                 @foreach ($announcements as $announcement)
                     <tr>
-                        <th scope="row">{{ $announcement->id }}</th>
+                        <td>{{ $announcement->id }}</td>
                         <td>{{ $announcement->title }}</td>
                         <td>{{ $announcement->duration }}</td>
                         <td>{{ $announcement->price }}</td>
@@ -29,6 +29,11 @@
                         <td> <a href="{{ route('admin.announcements.show', $announcement->slug) }}"
                                 class="bg-light text-uppercase">
                                 show
+                            </a>
+                        </td>
+                        <td> <a href="{{ route('admin.announcements.cookie', $announcement->slug) }}"
+                                class="bg-light text-uppercase">
+                                cookie
                             </a>
                         </td>
                     </tr>

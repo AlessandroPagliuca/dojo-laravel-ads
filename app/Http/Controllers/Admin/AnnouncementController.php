@@ -18,7 +18,14 @@ class AnnouncementController extends Controller
      */
     public function index()
     {
-        $announcements = Announcement::first();
+        $announcements = Announcement::all();
+
+        if ($announcements->count() === 1) {
+            // Tratta il caso quando hai solo un annuncio
+            $announcement = $announcements->first(); // Estrai l'annuncio
+            return view('admin.announcements.show', compact('announcement'));
+        }
+
         return view('admin.announcements.index', compact('announcements'));
     }
 
