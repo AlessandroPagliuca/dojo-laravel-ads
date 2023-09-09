@@ -81,10 +81,10 @@ class AnnouncementController extends Controller
     {
         //
     }
-    public function cookie($slug)
+    public function cookies($id)
     {
         //Retrieve the annoucement from the database using the slug
-        $annoucement = Announcement::where('slug', $slug)->firstOrFail();
+        $annoucement = Announcement::where('id', $id)->firstOrFail();
         //Retrieve the annoucement view using cookie
         $guestCookie = Cookie::get('value');
         return view('admin.announcements.cookie', compact('annoucement', 'guestCookie'));

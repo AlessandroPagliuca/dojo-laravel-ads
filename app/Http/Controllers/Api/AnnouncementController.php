@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use App\Models\Announcement;
 use App\Models\Cookie;
 
+//use Illuminate\Support\Facades\Cookie;
+
 class AnnouncementController extends Controller
 {
     public function home()
@@ -26,23 +28,29 @@ class AnnouncementController extends Controller
         ], 200);
 
     }
-    //FUNCTION TO MANAGE THE FRONT-END RECEIVED VIEW
-    public function storeView(Request $request)
+    //FUNCTION TO MANAGE THE FRONT-END RECEIVED COOKIES
+    public function cookies(Request $request)
     {
-        // Get the value of the user's cookie
-        $value = $request->cookie('name');
+        $name = $request->cookie('name_cookie');
+        $value = $request->cookie('value');
+        $announcementId = $request->input('announcement_id');
 
-        // Retrieves the guest user's cookie value
-        $guestCookie = $request->cookie('announcement_id');
+        // Verifica se i dati richiesti sono presenti
+        if (empty($name) || empty($value) || empty($announcementId)) {
+            return response()->json(['error' => 'Missing or invalid data'], 400);
+        }
 
-        // Save the views in the database
-        // Use the create() method of the Cookie model
+        // Altre verifiche sui dati, ad esempio la validità dell'announcementId
+
+        // Esegui il salvataggio solo se i dati sono validi
         Cookie::create([
-            'name' => 'value',
+            'name' => $name,
             'value' => $value,
+            'announcement_id' => $announcementId,
         ]);
 
-        // Return an appropriate answer
+        // Restituisci una risposta di successo
         return response()->json(['message' => 'View successfully saved.'], 201);
     }
+
 }

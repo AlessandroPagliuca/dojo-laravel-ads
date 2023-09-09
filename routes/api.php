@@ -20,3 +20,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::get('/home', [AnnouncementController::class, 'home']);
+Route::post('/cookies/{id}', [AnnouncementController::class, 'cookies']);
