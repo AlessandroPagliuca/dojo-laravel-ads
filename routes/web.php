@@ -29,6 +29,7 @@ Route::middleware(['auth', 'verified'])->name('admin.')->prefix('admin')->group(
 
     Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
     Route::resource('announcements', AnnouncementController::class)->parameters(['announcements' => 'announcement:slug']);
+    Route::get('cookies/{announcementId}', [AnnouncementController::class, 'cookies']);
 });
 
 

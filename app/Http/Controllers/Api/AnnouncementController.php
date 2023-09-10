@@ -5,9 +5,8 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Announcement;
-use App\Models\Cookie;
-
-//use Illuminate\Support\Facades\Cookie;
+use App\Models\CookieModel;
+use Illuminate\Support\Facades\Cookie;
 
 class AnnouncementController extends Controller
 {

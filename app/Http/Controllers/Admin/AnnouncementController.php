@@ -9,6 +9,7 @@ use Illuminate\Support\Str;
 use App\Http\Requests\StoreAnnouncementRequest;
 use App\Http\Requests\UpdateAnnouncementRequest;
 use Illuminate\Support\Facades\Cookie;
+use App\Models\CookieModel;
 
 class AnnouncementController extends Controller
 {
@@ -87,6 +88,12 @@ class AnnouncementController extends Controller
         $annoucement = Announcement::where('id', $id)->firstOrFail();
         //Retrieve the annoucement view using cookie
         $guestCookie = Cookie::get('value');
+        // Salva il cookie nel database
+        $cookie = new CookieModel;
+        $cookie->name = 'name_cookie';
+        $cookie->value = $guestCookie;
+        $cookie->announcement_id = $annoucement->id;
+        $cookie->save();
         return view('admin.announcements.cookie', compact('annoucement', 'guestCookie'));
     }
 }
